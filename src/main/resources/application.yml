@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/kimblogs?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: root
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 50MB
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 8081
+kim:
+  jwt:
+    # 自定义密钥
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    # token的存储有效时间
+    expire: 604800
+    header: Authorization
+upload:
+  pathAvatar: /F:/files/avatar/
+  pathBlogs: /F:/files/blogs/
+  pathArticle: /F:/files/articles/
+  pathSystemAvatar: /F:/files/systemAvatar/
